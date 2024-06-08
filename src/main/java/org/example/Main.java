@@ -4,9 +4,6 @@ import org.example.Service.MoveTurtleService;
 import org.example.configClass.PrepareStone;
 import org.example.gameTortoise.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -41,17 +38,17 @@ public class Main {
 
         MoveTurtleService moveTurtleService = new MoveTurtleService();
 
-       Card card1 = new Card(Colours.BLUE, Move.PLUS_ONE);
-       Card card2 = new Card(Colours.BLACK, Move.PLUS_ONE);
-       Card card3 = new Card(Colours.RED, Move.PLUS_ONE);
-       Card card4 = new Card(Colours.ORANGE, Move.PLUS_ONE);
-       Card card5 = new Card(Colours.WHITE, Move.PLUS_ONE);
+        Card card1 = new Card(Colours.BLUE, Move.PLUS_ONE);
+        Card card2 = new Card(Colours.BLACK, Move.PLUS_ONE);
+        Card card3 = new Card(Colours.RED, Move.PLUS_ONE);
+        Card card4 = new Card(Colours.ORANGE, Move.PLUS_ONE);
+        Card card5 = new Card(Colours.WHITE, Move.PLUS_ONE);
 
-       moveTurtleService.move(card1, board.getStone());
-       moveTurtleService.move(card2, board.getStone());
-       moveTurtleService.move(card3, board.getStone());
-       moveTurtleService.move(card4, board.getStone());
-       moveTurtleService.move(card5, board.getStone());
+        moveTurtleService.move(card1, board.getStone());
+        moveTurtleService.move(card2, board.getStone());
+        moveTurtleService.move(card3, board.getStone());
+        moveTurtleService.move(card4, board.getStone());
+        moveTurtleService.move(card5, board.getStone());
 
         printedboard(board);
 
