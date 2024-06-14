@@ -14,10 +14,10 @@ public class MoveTurtleFromThirdToFourth implements Moveable {
     @Override
     public void move(Stone stone) {
 
-        if (stone.getName3() == null && stone.getName4() != null) {
-            Turtle temp = stone.getName4();
-            stone.setName4(null);
-            stone.setName3(temp);
+        if (stone.getTurtle3() == null && stone.getTurtle4() != null) {
+            Turtle temp = stone.getTurtle4();
+            stone.setTurtle4(null);
+            stone.setTurtle3(temp);
         }
         if (next != null) {
             next.move(stone);

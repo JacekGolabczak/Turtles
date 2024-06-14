@@ -3,7 +3,6 @@ package org.example.Service;
 import org.example.chain.Moveable;
 import org.example.chain.PrepareChain;
 import org.example.gameTortoise.Card;
-import org.example.gameTortoise.Colours;
 import org.example.gameTortoise.Stone;
 import org.example.gameTortoise.Turtle;
 
@@ -16,6 +15,10 @@ public class MoveTurtleService {
         int idnexOfturtle = 0;
         Turtle turtle = null;
 
+        // if w if, zmiana
+        //metoda do logiki ifa
+
+
         Moveable moveable = new PrepareChain();
 
         for (int i = 0; i < stones.size(); i++) {
@@ -23,47 +26,47 @@ public class MoveTurtleService {
             if (stone == null) {
                 continue;
             }
-            if (stone.getName1() != null) {
-                if (card.getColours().equals(stone.getName1().getColour())) {
+            if (stone.getTurtle1() != null) {
+                if (card.getColours().equals(stone.getTurtle1().getColour())) {
                     idnexOfturtle = i;
-                    turtle = stone.getName1();
-                    stone.setName1(null);
+                    turtle = stone.getTurtle1();
+                    stone.setTurtle1(null);
                     moveable.move(stone);
                     break;
                 }
             }
-            if (stone.getName2() != null) {
-                if (card.getColours().equals(stone.getName2().getColour())) {
+            if (stone.getTurtle2() != null) {
+                if (card.getColours().equals(stone.getTurtle2().getColour())) {
                     idnexOfturtle = i;
-                    turtle = stone.getName2();
-                    stone.setName2(null);
+                    turtle = stone.getTurtle2();
+                    stone.setTurtle2(null);
                     moveable.move(stone);
                     break;
                 }
             }
-            if (stone.getName3() != null) {
-                if (card.getColours().equals(stone.getName3().getColour())) {
+            if (stone.getTurtle3() != null) {
+                if (card.getColours().equals(stone.getTurtle3().getColour())) {
                     idnexOfturtle = i;
-                    turtle = stone.getName3();
-                    stone.setName3(null);
+                    turtle = stone.getTurtle3();
+                    stone.setTurtle3(null);
                     moveable.move(stone);
                     break;
                 }
             }
-            if (stone.getName4() != null) {
-                if (card.getColours().equals(stone.getName4().getColour())) {
+            if (stone.getTurtle4() != null) {
+                if (card.getColours().equals(stone.getTurtle4().getColour())) {
                     idnexOfturtle = i;
-                    turtle = stone.getName4();
-                    stone.setName4(null);
+                    turtle = stone.getTurtle4();
+                    stone.setTurtle4(null);
                     moveable.move(stone);
                     break;
                 }
             }
-            if (stone.getName5() != null) {
-                if (card.getColours().equals(stone.getName5().getColour())) {
+            if (stone.getTurtle5() != null) {
+                if (card.getColours().equals(stone.getTurtle5().getColour())) {
                     idnexOfturtle = i;
-                    turtle = stone.getName5();
-                    stone.setName5(null);
+                    turtle = stone.getTurtle5();
+                    stone.setTurtle5(null);
                     moveable.move(stone);
                     break;
                 }
@@ -72,16 +75,16 @@ public class MoveTurtleService {
 
 
         Stone nextStone = stones.get(idnexOfturtle + 1);
-        if (nextStone.getName1() == null) {
-            nextStone.setName1(turtle);
-        } else if (nextStone.getName2() == null) {
-            nextStone.setName2(turtle);
-        } else if (nextStone.getName3() == null) {
-            nextStone.setName3(turtle);
-        } else if (nextStone.getName4() == null) {
-            nextStone.setName4(turtle);
-        } else if (nextStone.getName5() == null) {
-            nextStone.setName5(turtle);
+        if (nextStone.getTurtle1() == null) {
+            nextStone.setTurtle1(turtle);
+        } else if (nextStone.getTurtle2() == null) {
+            nextStone.setTurtle2(turtle);
+        } else if (nextStone.getTurtle3() == null) {
+            nextStone.setTurtle3(turtle);
+        } else if (nextStone.getTurtle4() == null) {
+            nextStone.setTurtle4(turtle);
+        } else if (nextStone.getTurtle5() == null) {
+            nextStone.setTurtle5(turtle);
         }
     }
 }
