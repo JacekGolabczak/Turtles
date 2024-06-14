@@ -3,6 +3,9 @@ package org.example;
 import org.example.Service.MoveTurtleService;
 import org.example.configClass.PrepareStone;
 import org.example.gameTortoise.*;
+import org.example.repository.CsvRepository;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,6 +54,12 @@ public class Main {
         moveTurtleService.move(card5, board.getStone());
 
         printedboard(board);
+
+        CsvRepository csvRepository = new CsvRepository();
+
+        List<Card> readCards = csvRepository.readCards();
+
+        System.out.println(readCards);
 
     }
 

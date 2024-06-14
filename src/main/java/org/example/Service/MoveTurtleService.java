@@ -12,12 +12,11 @@ public class MoveTurtleService {
 
     public void move(Card card, List<Stone> stones) {
 
+        /// pomyslec nad ifami getTurtless
+
         int idnexOfturtle = 0;
+
         Turtle turtle = null;
-
-        // if w if, zmiana
-        //metoda do logiki ifa
-
 
         Moveable moveable = new PrepareChain();
 
@@ -26,6 +25,7 @@ public class MoveTurtleService {
             if (stone == null) {
                 continue;
             }
+
             if (stone.getTurtle1() != null) {
                 if (card.getColours().equals(stone.getTurtle1().getColour())) {
                     idnexOfturtle = i;

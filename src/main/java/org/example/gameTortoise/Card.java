@@ -17,4 +17,14 @@ public class Card {
     public Move getMove() {
         return move;
     }
+
+    @Override
+    public String toString() { //ogarnij to \n
+        return "Card{" +
+                "\n" +
+                "colours=" + colours +
+                ", move=" + move +
+                '}';
+    }
+
 }
