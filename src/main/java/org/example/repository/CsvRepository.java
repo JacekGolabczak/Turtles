@@ -8,13 +8,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CsvRepository {
 
-    public List<Card> readCards() { // wczytywanie z plików .csv
-        List<Card> cardList = new ArrayList<>();
+    public Set<Card> readCards() { // wczytywanie z plików .csv
+        Set<Card> cardList = new HashSet<>();
         try {
 
             InputStream is = CsvRepository.class.getClassLoader().getResourceAsStream("cards.csv");
@@ -22,11 +21,22 @@ public class CsvRepository {
             String line;
 
             while ((line = br.readLine()) != null) {
+
                 String[] strings = line.split(";");
-                Card card = new Card(
-                        Colours.valueOf(strings[0]),
-                        Move.valueOf(strings[1])
-                );
+
+                if (strings.length != 2) {
+                    continue;
+                }
+
+                Colours colours = Colours.valueOf(strings[0]
+                        .replaceAll("\\s+", "") // redukcja białych znaków
+                        .toUpperCase()); // wszystko na duże litery
+
+                Move move = Move.valueOf(strings[1]
+                        .replaceAll("\\s+", "")
+                        .toUpperCase());
+
+                Card card = new Card(colours, move);
                 cardList.add(card);
             }
 
@@ -34,9 +44,9 @@ public class CsvRepository {
             System.out.println("error");
         }
 
-
-
-
         return cardList;
     }
 }
+
+///// HOME WORK, zrobic klase repo z drugim plikiem do wczytania
+//// postarać się ogarnać ify

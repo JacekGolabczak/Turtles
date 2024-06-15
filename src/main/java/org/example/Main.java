@@ -5,7 +5,11 @@ import org.example.configClass.PrepareStone;
 import org.example.gameTortoise.*;
 import org.example.repository.CsvRepository;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -57,7 +61,7 @@ public class Main {
 
         CsvRepository csvRepository = new CsvRepository();
 
-        List<Card> readCards = csvRepository.readCards();
+        Set<Card> readCards = csvRepository.readCards();
 
         System.out.println(readCards);
 

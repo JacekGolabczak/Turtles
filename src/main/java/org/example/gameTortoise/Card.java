@@ -1,6 +1,8 @@
 package org.example.gameTortoise;
 
-public class Card {
+import java.util.Objects;
+
+public class Card implements Comparable<Card> {
 
     private Colours colours;
     private Move move;
@@ -19,12 +21,26 @@ public class Card {
     }
 
     @Override
-    public String toString() { //ogarnij to \n
-        return "Card{" +
-                "\n" +
-                "colours=" + colours +
-                ", move=" + move +
-                '}';
+    public String toString() {
+        return "\n" + "Card{" + "colours=" + colours + ", move=" + move + '}';
+
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return colours == card.colours && move == card.move;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(colours, move);
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        return 0;
+    }
 }
